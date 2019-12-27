@@ -11,7 +11,6 @@ import Foundation
 import UIKit
 
 fileprivate var activityView: UIView?
-fileprivate var blurView: UIVisualEffectView?
 
 extension UIViewController {
     

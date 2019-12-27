@@ -17,7 +17,6 @@ class MapViewController: UIViewController {
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate=self
         loadPins()
     }
     override func viewWillAppear(_ animated: Bool) {

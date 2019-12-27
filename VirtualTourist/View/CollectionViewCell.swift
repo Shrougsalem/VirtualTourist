@@ -11,7 +11,6 @@ import Kingfisher
 
 
 class CollectionViewCell: UICollectionViewCell {
-    var blurView: UIVisualEffectView?
     @IBOutlet weak var imageView: UIImageView!
     var photo: Photo! {
         didSet{

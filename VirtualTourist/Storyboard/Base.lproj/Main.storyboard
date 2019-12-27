@@ -21,6 +21,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jkC-Xc-QXW">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Lax-gC-fN8"/>
                                     <outletCollection property="gestureRecognizers" destination="HM6-uS-Z1S" appends="YES" id="HXD-gl-o04"/>
                                 </connections>
                             </mapView>
@@ -73,6 +74,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="dhe-wL-xOv"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="HPL-bw-Rtb" id="gHE-EC-fiD"/>
+                                </connections>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qEe-2n-0Gz">
                                 <rect key="frame" x="0.0" y="278" width="414" height="530"/>

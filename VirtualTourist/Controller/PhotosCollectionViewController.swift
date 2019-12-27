@@ -33,8 +33,6 @@ class PhotosCollectionViewController: UIViewController, MKMapViewDelegate, NSFet
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        collectionView.delegate=self
-        mapView.delegate=self
         configureCollectionView()
         configureMapView()
         fetch()
