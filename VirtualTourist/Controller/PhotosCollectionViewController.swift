@@ -137,7 +137,7 @@ class PhotosCollectionViewController: UIViewController, MKMapViewDelegate, NSFet
             DataController.saveContext()
         }
         
-        FlickrAPI.getFlickrImagesURLs(coordinate: CLLocationCoordinate2D(latitude: pin.latitude, longitude: pin.longitude), page: page) { (imagesURLs, errString) in
+        FlickrAPI.getFlickrPhotosURLs(coordinate: CLLocationCoordinate2D(latitude: pin.latitude, longitude: pin.longitude), page: page) { (imagesURLs, errString) in
             guard errString == nil else {
                 self.alert(title: "Metwork Failure", message: "Error \n \(String(describing: errString))")
                 self.configureUI(isLoading: false)

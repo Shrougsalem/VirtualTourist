@@ -18,7 +18,7 @@ class FlickrAPI: UIViewController {
     static let baseURL="https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(APIKey)&format=json&nojsoncallback=1&per_page=12"
     
     //MARK: Get Flickr Images URLs
-    static func getFlickrImagesURLs (coordinate: CLLocationCoordinate2D, page: Int, completion: @escaping ([URL]?, String?) -> ()){
+    static func getFlickrPhotosURLs (coordinate: CLLocationCoordinate2D, page: Int, completion: @escaping ([URL]?, String?) -> ()){
         
         guard let url=URL(string: FlickrAPI.baseURL + "&lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&page=\(page)&bbox=\(getBBox(lat: coordinate.latitude, long: coordinate.longitude))")
             else {
