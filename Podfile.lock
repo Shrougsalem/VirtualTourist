@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (5.0.0-rc.3)
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
+  - Kingfisher (~> 5.0)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: d806c12a4ec1ab90825a64061650c0e07ca0d927
+
+COCOAPODS: 1.8.4
