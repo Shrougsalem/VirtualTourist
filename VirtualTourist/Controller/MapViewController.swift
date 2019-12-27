@@ -44,7 +44,7 @@ class MapViewController: UIViewController {
     }
     //To drop a new pin after tap & hold gesture
     @IBAction func addPin(_ sender: UILongPressGestureRecognizer) {
-        if (sender.state == UIGestureRecognizer.State.began) {
+        if sender.state == UIGestureRecognizer.State.began {
             let location = sender.location(in: mapView)
             let coordinate = self.mapView.convert(location, toCoordinateFrom: mapView)
             let pin = DataController.savePin(longitude: coordinate.longitude, latitude: coordinate.latitude)
