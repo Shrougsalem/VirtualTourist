@@ -151,6 +151,7 @@ class PhotosCollectionViewController: UIViewController, MKMapViewDelegate, NSFet
             self.collectionView.reloadData()
         }
     }
+    
     //MARK: Delete The Selected Photos
     fileprivate func deleteSelectedPhotos() {
         for photo in selectedPhotos  {
@@ -160,7 +161,7 @@ class PhotosCollectionViewController: UIViewController, MKMapViewDelegate, NSFet
         DataController.saveContext()
         self.collectionView.reloadData()
     }
-
+    
     // MARK: - MKMapViewDelegate
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
@@ -176,22 +177,23 @@ class PhotosCollectionViewController: UIViewController, MKMapViewDelegate, NSFet
         }
         return pinView
     }
-
+    
     // MARK: UICollectionViewDataSource
-
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchedResultsController.fetchedObjects?.count ?? 0
     }
     
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! CollectionViewCell
         //config cell
         cell.photo = fetchedResultsController.object(at: indexPath)
         return cell
     }
     
-     //MARK: UICollectionViewDelegate
-     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    //MARK: UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         isSelected(selection: true)
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         let photo = fetchedResultsController!.object(at: indexPath)

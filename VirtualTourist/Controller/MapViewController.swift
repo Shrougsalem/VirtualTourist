@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
-
+    
     //MARK: IBOutlet
     @IBOutlet weak var mapView: MKMapView!
     
@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         loadPins()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         for pin in mapView.selectedAnnotations {
@@ -26,11 +27,13 @@ class MapViewController: UIViewController {
             mapView.deselectAnnotation(pin, animated: false)
         }
     }
+    
     //MARK: IBActions
     //Help message for the user on how to use the app
     @IBAction func helpTutorial(_ sender: Any) {
         alert(title: "How to use it!", message: "Tap, Hold & Release to drop a new pin on the map. \n Have fun browsing the pictures from each location! 🌏♥️")
     }
+    
     //To remove all pins annotations from the map view
     @IBAction func clearAll(_ sender: Any) {
         let alert = UIAlertController(title: "This Will Delete All Your Travel Locations. \n Would you like to continue?", message: nil, preferredStyle: .alert)
@@ -42,6 +45,7 @@ class MapViewController: UIViewController {
         }))
         present(alert, animated: true, completion: nil)
     }
+    
     //To drop a new pin after tap & hold gesture
     @IBAction func addPin(_ sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizer.State.began {
@@ -75,7 +79,7 @@ class MapViewController: UIViewController {
         }
     }
     
-
+    
     
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,8 +90,10 @@ class MapViewController: UIViewController {
     }
     
 }
-    extension MapViewController: MKMapViewDelegate{
-        
+
+
+extension MapViewController: MKMapViewDelegate{
+    
     // MARK: - MKMapViewDelegate
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
@@ -110,7 +116,7 @@ class MapViewController: UIViewController {
         let pin = DataController.getPins().filter {
             $0.checkEquivalentCoordinates(coordinate: view.annotation!.coordinate)
             }.first
-       performSegue(withIdentifier: "toPhotoAlbum", sender: pin)
+        performSegue(withIdentifier: "toPhotoAlbum", sender: pin)
     }
     
 }
